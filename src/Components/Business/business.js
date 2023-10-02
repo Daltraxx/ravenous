@@ -14,7 +14,7 @@ const testBusiness = {
     businessReviewCount: 1000000
 };
 
-function BusinessComponent() {
+function Business() {
     return (
         <div>
             <div /*holds business image*/>
@@ -35,4 +35,4 @@ function BusinessComponent() {
     )
 };
 
-export default BusinessComponent;
+export default Business;
