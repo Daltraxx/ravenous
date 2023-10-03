@@ -18,7 +18,6 @@ function SearchBar() {
         });
     };
 
-    // consider using forms to redesign below, such as a submit input
     return (
         <div /*search bar container*/>
             <div /*search bar sort options*/>
