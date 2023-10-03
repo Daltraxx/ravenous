@@ -24,12 +24,14 @@ function SearchBar() {
             <div /*search bar sort options*/>
                 <ul>{renderSortOptions()}</ul>
             </div>
-            <div /*the two inputs*/>
-                <input placeholder="search terms" />
-                <input placeholder="location" />
-            </div>
-            <div /*submit button*/>
-                <input type="submit" />
+            <div /*form with two inputs and submit*/>
+                <form method="get" action="https://api.yelp.com/v3/businesses/search">
+                    <label for="term">Search Terms</label>
+                    <input type="text" id="term" name="term" />
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" />
+                    <input type="submit" value="Search" />
+                </form>
             </div>
         </div>
     )
