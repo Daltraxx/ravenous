@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Business from '../Business/business';
+import Business from '../Business/Business';
 
 //consider using array and map
 
