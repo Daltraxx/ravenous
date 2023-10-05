@@ -19,19 +19,19 @@ const testBusiness = {
 function Business() {
     return (
         <div>
-            <div /*holds business image*/>
+            <div>
                 <img src={testBusiness.businessImage} alt={testBusiness.businessImageAlt}/>
             </div>
-            <h2 /*holds business name*/>{testBusiness.businessName}</h2>
-            <div /*holds business address*/>
+            <h2>{testBusiness.businessName}</h2>
+            <div>
                 <p>{testBusiness.businessAddress}</p>
                 <p>{testBusiness.businessCity}</p>
                 <p>{`${testBusiness.businessState}, ${testBusiness.businessZipCode}`}</p>
             </div>
-            <div /*other information*/>
-                <p>{testBusiness.businessCategory}</p>
-                <p>{testBusiness.businessRating}</p>
-                <p>{testBusiness.businessReviewCount}</p>
+            <div>
+                <p>{`Category: ${testBusiness.businessCategory}`}</p>
+                <p>{`Rating: ${testBusiness.businessRating}`}</p>
+                <p>{`Review Count: ${testBusiness.businessReviewCount}`}</p>
             </div>
         </div>
     )
