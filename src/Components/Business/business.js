@@ -18,18 +18,18 @@ function Business() {
     return (
         <div>
             <div /*holds business image*/>
-                <img />
+                <img src={testBusiness.businessImage}/>
             </div>
-            <h2 /*holds business name*/></h2>
+            <h2 /*holds business name*/>{testBusiness.businessName}</h2>
             <div /*holds business address*/>
-                <p>{/*address*/}</p>
-                <p>{/*city*/}</p>
-                <p>{/*state and zipcode*/}</p>
+                <p>{testBusiness.businessAddress}</p>
+                <p>{testBusiness.businessCity}</p>
+                <p>{`${testBusiness.businessState}, ${testBusiness.businessZipCode}`}</p>
             </div>
             <div /*other information*/>
-                <p>{/*category*/}</p>
-                <p>{/*rating*/}</p>
-                <p>{/*review count*/}</p>
+                <p>{testBusiness.businessCategory}</p>
+                <p>{testBusiness.businessRating}</p>
+                <p>{testBusiness.businessReviewCount}</p>
             </div>
         </div>
     )
