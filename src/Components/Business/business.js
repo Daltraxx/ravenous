@@ -3,7 +3,8 @@ import React from 'react';
 //create a hardcoded business that can be used to generate a list of fake businesses and simulate the website’s functionality.
 
 const testBusiness = {
-    businessImage : "KrustyKrab.png",
+    businessImage : "./KrustyKrab.png",
+    businessImageAlt : "A picture of the Krusty Krab",
     businessName : "Krusty Krab",
     businessAddress : "831 Bottom Feeder Lane",
     businessCity : "Bikini Bottom",
@@ -18,7 +19,7 @@ function Business() {
     return (
         <div>
             <div /*holds business image*/>
-                <img src={testBusiness.businessImage}/>
+                <img src={testBusiness.businessImage} alt={testBusiness.businessImageAlt}/>
             </div>
             <h2 /*holds business name*/>{testBusiness.businessName}</h2>
             <div /*holds business address*/>
