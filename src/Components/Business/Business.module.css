@@ -1,0 +1,9 @@
+.businessContainer {
+    box-sizing: border-box;
+    background-color: beige;
+    width: 500px;
+}
+
+.businessImage {
+    margin-left: 100px;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Business.module.css';
 //Each Business component should display an image, name, address, city, state, zipcode, category, rating, and review count.
 //create a hardcoded business that can be used to generate a list of fake businesses and simulate the website’s functionality.
 import image from './KrustyKrab.png';
@@ -18,8 +19,8 @@ const testBusiness = {
 
 function Business() {
     return (
-        <div>
-            <div>
+        <div className={styles.businessContainer}>
+            <div className={styles.businessImage}>
                 <img src={testBusiness.businessImage} alt={testBusiness.businessImageAlt}/>
             </div>
             <h2>{testBusiness.businessName}</h2>
