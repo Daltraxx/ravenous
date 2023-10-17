@@ -1,9 +1,11 @@
 .businessContainer {
     box-sizing: border-box;
-    background-color: beige;
-    width: 500px;
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .businessImage {
-    margin-left: 100px;
+    width: 100%;
 }
