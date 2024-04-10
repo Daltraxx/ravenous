@@ -1,6 +1,7 @@
 const mockBusiness = {
     name: 'Krusty Krab',
     image: 'https://static.wikia.nocookie.net/spongebob/images/b/b1/SpongeChovy_065.png',
+    alt: 'The Krusty Krab exterior',
     address: '831 Bottom Feeder Lane',
     city: 'Bikini Bottom',
     state: 'Pacific Ocean',
@@ -16,7 +17,5 @@ const mockBusinessArray = [];
 for (let i = 0; i < 6; i++) {
     mockBusinessArray.push(mockBusiness);
 }
-
-console.log(mockBusinessArray);
 
 export default mockBusinessArray;
