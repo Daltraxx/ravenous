@@ -4,7 +4,7 @@ function Business() {
     return (
         <section>
             <img />
-            <h2>Business Name</h1>
+            <h2>Business Name</h2>
             <p>Address</p>
             <p>City</p>
             <p>State and Zipcode</p>
