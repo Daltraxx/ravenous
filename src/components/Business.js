@@ -1,16 +1,16 @@
 import React from 'react';
 
-function Business() {
+function Business(props) {
     return (
         <section>
-            <img />
-            <h2>Business Name</h2>
-            <p>Address</p>
-            <p>City</p>
-            <p>State and Zipcode</p>
-            <h3>Category</h3>
-            <p>Rating</p>
-            <p>Review Count</p>
+            <img src={props.src} alt={props.alt}/>
+            <h2>{props.businessName}</h2>
+            <p>{props.businessAddress}</p>
+            <p>{props.businessCity}</p>
+            <p>{props.businessState} {props.businessZipcode}</p>
+            <h3>{props.businessCategory}</h3>
+            <p>{props.businessRating}</p>
+            <p>{props.businessReviewCount}</p>
         </section>
     )
 }
