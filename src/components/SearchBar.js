@@ -13,6 +13,7 @@ function SearchBar() {
 
     const [sort, setSort] = useState('sort_by=best_match');
     const bestMatchButton = () => {
+        console.log('best match');
         setSort((prev) => 'sort_by=best_match');
     }
     const highestRatedButton = () => {
@@ -50,17 +51,29 @@ function SearchBar() {
             console.log(error);
         }
     }
+
+    const handleSubmit = async(event) => {
+        event.preventDefault();
+        if (!business || !location) {
+            alert('Please enter a value in each field!');
+            return;
+        }
+        const businessResults = await getBusinesses();
+        console.log(businessResults);
+    }
     
 
     return (
-        <form>
+        <>
             <button onClick={bestMatchButton}>Best Match</button>
             <button onClick={highestRatedButton}>Highest Rated</button>
             <button onClick={mostReviewedButton}>Most Reviewed</button>
-            <input type='text' value={business} onChange={handleBusinessFieldChange} placeholder='Search Businesses' />
-            <input type='text' value={location} onChange={handleLocationFieldChange} placeholder='Where?' />
-            <button type='submit'>Search Businesses</button>
-        </form>
+            <form onSubmit={handleSubmit}>
+                <input type='text' value={business} onChange={handleBusinessFieldChange} placeholder='Search Businesses' />
+                <input type='text' value={location} onChange={handleLocationFieldChange} placeholder='Where?' />
+                <button type='submit'>Search Businesses</button>
+            </form>
+        </>
     )
 }
 
