@@ -1,6 +1,6 @@
 import React from 'react';
-import Business from './Business';
-import mockBusinessArray from '../mockData/mockBusinessData';
+import Business from '../Business/Business';
+import mockBusinessArray from '../../mockData/mockBusinessData';
 
 function BusinessList() {
     return (
