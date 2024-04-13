@@ -33,8 +33,9 @@ function SearchBar() {
         const url = 'https://api.yelp.com/v3/businesses/search?';
         const termParam = `term=${parseFieldValue(business)}`;
         const locationParam = `location=${parseFieldValue(location)}`;
+        const sortParam = sort;
         const resultLimit = 'limit=20';
-        const urlToFetch = url + locationParam + '&' + termParam + '&' + resultLimit;
+        const urlToFetch = url + locationParam + '&' + termParam + '&' + sortParam + '&' + resultLimit;
         const options = {method: 'GET', headers: {accept: 'application/json', Authorization: 'PLACE API KEY HERE'}};
 
         try {
