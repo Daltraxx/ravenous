@@ -29,15 +29,16 @@ function SearchBar() {
         return urlString;
     }
 
-    //likely need api key
+    //request will fail due to CORS, figure out later
     const getBusinesses = async() => {
+        const apiKey = 'Bearer sYFtxn62jXMaORAzMZrYKb2R3_KxuzZO_AULHua7tAVs6Ic4qpylArVf3dt0VSDp6-n5tLRL0xdplrZtpUXzXU84waLANLRRpuYw7Fp8XYXxodyHHTb-FUvbofQZZnYx';
         const url = 'https://api.yelp.com/v3/businesses/search?';
         const termParam = `term=${parseFieldValue(business)}`;
         const locationParam = `location=${parseFieldValue(location)}`;
         const sortParam = sort;
         const resultLimit = 'limit=20';
         const urlToFetch = url + locationParam + '&' + termParam + '&' + sortParam + '&' + resultLimit;
-        const options = {method: 'GET', headers: {accept: 'application/json', Authorization: 'PLACE API KEY HERE'}};
+        const options = {method: 'GET', headers: {accept: 'application/json', Authorization: apiKey}};
 
         try {
             const response = await fetch(urlToFetch, options);
