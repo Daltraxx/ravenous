@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './SearchBar.module.css';
 
 function SearchBar() {
     const [business, setBusiness] = useState(null);
@@ -65,16 +66,22 @@ function SearchBar() {
     
 
     return (
-        <>
-            <button onClick={bestMatchButton}>Best Match</button>
-            <button onClick={highestRatedButton}>Highest Rated</button>
-            <button onClick={mostReviewedButton}>Most Reviewed</button>
+        <div className={styles.SearchBar}>
+            <section className={styles.SearchBarSortOptions}>
+                <button onClick={bestMatchButton}>Best Match</button>
+                <button onClick={highestRatedButton}>Highest Rated</button>
+                <button onClick={mostReviewedButton}>Most Reviewed</button>
+            </section>
             <form onSubmit={handleSubmit}>
-                <input type='text' value={business} onChange={handleBusinessFieldChange} placeholder='Search Businesses' />
-                <input type='text' value={location} onChange={handleLocationFieldChange} placeholder='Where?' />
-                <button type='submit'>Search Businesses</button>
+                <div className={styles.SearchBarFields}>
+                    <input type='text' value={business} onChange={handleBusinessFieldChange} placeholder='Search Businesses' />
+                    <input type='text' value={location} onChange={handleLocationFieldChange} placeholder='Where?' />
+                </div>
+                <div className={styles.SearchBarSubmit}>
+                    <input type='submit' value='Search Businesses' />
+                </div>
             </form>
-        </>
+        </div>
     )
 }
 

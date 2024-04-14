@@ -1,0 +1,19 @@
+html {
+    font-size: 18px;
+}
+
+.App {
+    font-family: Helvetica, Arial, sans-serif;
+    
+}
+
+.App h1 {
+    font-style: italic;
+    font-family: "Jersey 20", sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    background-color: hsl(177, 44%, 55%);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1rem;
+}
