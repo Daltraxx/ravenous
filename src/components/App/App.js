@@ -7,11 +7,15 @@ import SearchBar from '../SearchBar/SearchBar';
 function App() {
   return (
     <div className={styles.App}>
-      <h1>Ravenous</h1>
-      <nav>
-        <SearchBar />
-      </nav>
-      <BusinessList />
+      <header>
+        <h1>Ravenous</h1>
+        <nav>
+          <SearchBar />
+        </nav>
+      </header>
+      <main>
+        <BusinessList />
+      </main>
     </div>
   );
 }
