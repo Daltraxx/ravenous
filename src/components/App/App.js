@@ -13,7 +13,7 @@ function App() {
           <SearchBar />
         </nav>
       </header>
-      <main className={styles.Main}>
+      <main>
         <BusinessList />
       </main>
     </div>

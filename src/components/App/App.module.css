@@ -4,7 +4,6 @@ html {
 
 .App {
     font-family: Helvetica, Arial, sans-serif;
-    
 }
 
 .App h1 {
@@ -17,8 +16,4 @@ html {
     margin-top: 0;
     margin-bottom: 0;
     padding: .5rem;
-}
-
-.Main {
-    background-color: hsl(188, 18%, 88%);
 }
