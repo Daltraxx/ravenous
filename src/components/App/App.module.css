@@ -18,3 +18,7 @@ html {
     margin-bottom: 0;
     padding: .5rem;
 }
+
+.Main {
+    background-color: hsl(188, 18%, 88%);
+}
