@@ -5,12 +5,16 @@ function Business(props) {
         <section>
             <img src={props.src} alt={props.alt}/>
             <h2>{props.businessName}</h2>
-            <p>{props.businessAddress}</p>
-            <p>{props.businessCity}</p>
-            <p>{props.businessState} {props.businessZipcode}</p>
-            <h3>{props.businessCategory}</h3>
-            <p>{props.businessRating}</p>
-            <p>{props.businessReviewCount}</p>
+            <div>
+                <p>{props.businessAddress}</p>
+                <p>{props.businessCity}</p>
+                <p>{props.businessState} {props.businessZipcode}</p>
+            </div>
+            <div>
+                <h3>{props.businessCategory}</h3>
+                <p>{props.businessRating} stars</p>
+                <p>{props.businessReviewCount} reviews</p>
+            </div>
         </section>
     )
 }

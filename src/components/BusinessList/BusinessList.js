@@ -1,5 +1,7 @@
 import React from 'react';
 import Business from '../Business/Business';
+import styles from './BusinessList.module.css';
+
 import mockBusinessArray from '../../mockData/mockBusinessData';
 
 const mockBusinessResults = mockBusinessArray.map(mockBusiness => (
