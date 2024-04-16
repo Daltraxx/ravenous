@@ -21,7 +21,7 @@ const mockBusinessResults = mockBusinessArray.map(mockBusiness => (
 
 function BusinessList() {
     return (
-        <section>
+        <section className={styles.BusinessListContainer}>
             {mockBusinessResults}
         </section>
     )
