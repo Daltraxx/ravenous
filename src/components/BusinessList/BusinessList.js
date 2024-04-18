@@ -15,6 +15,7 @@ function BusinessList({ mockBusinesses }) {
             businessCategory={mockBusiness.category}
             businessRating={mockBusiness.rating}
             businessReviewCount={mockBusiness.reviewCount}
+            key={mockBusiness.name}
         />
         ));
     return (
