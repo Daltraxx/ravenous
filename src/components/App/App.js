@@ -4,6 +4,8 @@ import styles from './App.module.css';
 import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
 
+import mockBusinessArray from '../../mockData/mockBusinessData';
+
 function App() {
   return (
     <div className={styles.App}>
@@ -14,7 +16,7 @@ function App() {
         </nav>
       </header>
       <main>
-        <BusinessList />
+        <BusinessList mockBusinesses={mockBusinessArray}/>
       </main>
     </div>
   );
