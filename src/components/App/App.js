@@ -16,7 +16,7 @@ function App() {
         </nav>
       </header>
       <main>
-        <BusinessList mockBusinesses={mockBusinessArray}/>
+        <BusinessList mockBusinesses={mockBusinessArray} />
       </main>
     </div>
   );
