@@ -41,7 +41,7 @@
 
 .SearchBarSortOptions button.active,
 .SearchBarSortOptions button:hover {
-  background-color: rgb(86, 217, 243);
+  background-color: hsl(190, 75%, 64.5%);
   border: 1px solid black;
 }
 
