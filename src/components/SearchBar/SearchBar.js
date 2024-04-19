@@ -55,6 +55,7 @@ function SearchBar() {
         return urlString;
     }
 
+    /*commented out to simulate search without actual api interaction
     //request will fail due to CORS, figure out later
     const getBusinesses = async() => {
         const apiKey = 'Bearer sYFtxn62jXMaORAzMZrYKb2R3_KxuzZO_AULHua7tAVs6Ic4qpylArVf3dt0VSDp6-n5tLRL0xdplrZtpUXzXU84waLANLRRpuYw7Fp8XYXxodyHHTb-FUvbofQZZnYx';
@@ -87,6 +88,17 @@ function SearchBar() {
         }
         const businessResults = await getBusinesses();
         console.log(businessResults);
+    }
+    */
+
+    //handleSubmit function to simulate search
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!business || !location) {
+            alert('Please enter a value in each field!');
+            return;
+        }
+        alert(`Searching Yelp for ${business} in ${location} by ${sort}`);
     }
 
     return (
