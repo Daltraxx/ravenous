@@ -13,6 +13,7 @@ function SearchBar() {
     }
 
     const [sort, setSort] = useState('best_match');
+    const [isClicked, setIsClicked] = useState(false);
 
 
     const searchBarSortOptions = {
@@ -22,7 +23,7 @@ function SearchBar() {
     };
 
     const getSortOptionClassName = (sortOptionValue) => {
-        if (sortOptionValue === sort) {
+        if (sortOptionValue === sort && isClicked) {
             return styles.active;
         }
 
@@ -30,6 +31,7 @@ function SearchBar() {
     }
 
     const handleSortOptionChange = (sortOptionValue) => {
+        setIsClicked((prev) => true);
         setSort((prev) => sortOptionValue);
     }
 
