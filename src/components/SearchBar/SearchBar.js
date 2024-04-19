@@ -2,26 +2,49 @@ import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
 
 function SearchBar() {
-    const [business, setBusiness] = useState(null);
+    const [business, setBusiness] = useState("");
     const handleBusinessFieldChange = ({target}) => {
         setBusiness((prev) => target.value);
     }
 
-    const [location, setLocation] = useState(null);
+    const [location, setLocation] = useState("");
     const handleLocationFieldChange = ({target}) => {
         setLocation((prev) => target.value);
     }
 
-    const [sort, setSort] = useState('sort_by=best_match');
-    const bestMatchButton = () => {
-        console.log('best match');
-        setSort((prev) => 'sort_by=best_match');
+    const [sort, setSort] = useState('best_match');
+
+
+    const searchBarSortOptions = {
+        'Best Match': 'best_match',
+        'Highest Rated': 'rating',
+        'Most Reviewed': 'review_count'
+    };
+
+    const getSortOptionClassName = (sortOptionValue) => {
+        if (sortOptionValue === sort) {
+            return styles.active;
+        }
+
+        return '';
     }
-    const highestRatedButton = () => {
-        setSort((prev) => 'sort_by=rating');
+
+    const handleSortOptionChange = (sortOptionValue) => {
+        setSort((prev) => sortOptionValue);
     }
-    const mostReviewedButton = () => {
-        setSort((prev) => 'sort_by=review_count');
+
+    const renderSearchBarSortOptions = () => {
+        return Object.keys(searchBarSortOptions).map((sortOption) => {
+            let sortOptionValue = searchBarSortOptions[sortOption];
+            return (
+                <button
+                className={getSortOptionClassName(sortOptionValue)}
+                key={sortOptionValue}
+                onClick={() => handleSortOptionChange(sortOptionValue)}
+                >{sortOption}
+                </button>
+            )
+        })
     }
 
 
@@ -36,7 +59,7 @@ function SearchBar() {
         const url = 'https://api.yelp.com/v3/businesses/search?';
         const termParam = `term=${parseFieldValue(business)}`;
         const locationParam = `location=${parseFieldValue(location)}`;
-        const sortParam = sort;
+        const sortParam = 'sort_by=' + sort;
         const resultLimit = 'limit=20';
         const urlToFetch = url + locationParam + '&' + termParam + '&' + sortParam + '&' + resultLimit;
         const options = {method: 'GET', headers: {accept: 'application/json', Authorization: apiKey}};
@@ -63,14 +86,11 @@ function SearchBar() {
         const businessResults = await getBusinesses();
         console.log(businessResults);
     }
-    
 
     return (
         <div className={styles.SearchBar}>
             <section className={styles.SearchBarSortOptions}>
-                <button onClick={bestMatchButton}>Best Match</button>
-                <button onClick={highestRatedButton}>Highest Rated</button>
-                <button onClick={mostReviewedButton}>Most Reviewed</button>
+                {renderSearchBarSortOptions()}
             </section>
             <form onSubmit={handleSubmit}>
                 <div className={styles.SearchBarFields}>

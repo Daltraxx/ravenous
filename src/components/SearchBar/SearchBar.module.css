@@ -39,6 +39,10 @@
     touch-action: manipulation;
 }
 
+.SearchBarSortOptions button.active {
+    background-color: red;
+}
+
 .SearchBarSortOptions button:hover {
   background-color: hsl(204, 31%, 86%);
   border: 1px solid black;
