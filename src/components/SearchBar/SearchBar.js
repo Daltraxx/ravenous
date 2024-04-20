@@ -50,10 +50,7 @@ function SearchBar() {
     }
 
 
-    const parseFieldValue = (fieldValue) => {
-        let urlString = fieldValue.replace(/\s+/g, '%20');
-        return urlString;
-    }
+    
 
     /*commented out to simulate search without actual api interaction
     //request will fail due to CORS, figure out later
