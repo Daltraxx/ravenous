@@ -1,25 +1,24 @@
 const apiKey = 'Bearer sYFtxn62jXMaORAzMZrYKb2R3_KxuzZO_AULHua7tAVs6Ic4qpylArVf3dt0VSDp6-n5tLRL0xdplrZtpUXzXU84waLANLRRpuYw7Fp8XYXxodyHHTb-FUvbofQZZnYx';
 
-const parseFieldValue = (fieldValue) => {
-    let urlString = fieldValue.replace(/\s+/g, '%20');
-    return urlString;
-}
+const Yelp = async(term, location, sort) => {
+    //url with api use prepended to get past CORS restrictions
+    const url = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
+    const parseFieldValue = (fieldValue) => {
+        let urlString = fieldValue.replace(/\s+/g, '%20');
+        return urlString;
+    }
 
-const Yelp = async() => {
-    const url = 'https://api.yelp.com/v3/businesses/search?';
-
-    //const termParam = `term=${parseFieldValue(business)}`;
-    const termParam = `term=${parseFieldValue('McDonalds')}`;
-    //const locationParam = `location=${parseFieldValue(location)}`;
-    const locationParam = `location=${parseFieldValue('San Diego')}`;
-    //const sortParam = 'sort_by=' + sort;
-    const sortParam = 'sort_by=best_match';
+    const termParam = `term=${parseFieldValue(term)}`;
+    
+    const locationParam = `location=${parseFieldValue(location)}`;
+    
+    const sortParam = 'sort_by=' + sort;
+    
     
     const resultLimit = 'limit=20';
     const urlToFetch = url + locationParam + '&' + termParam + '&' + sortParam + '&' + resultLimit;
     const options = {method: 'GET', headers: {accept: 'application/json', Authorization: apiKey}};
 
-    console.log(urlToFetch);
     try {
         const response = await fetch(urlToFetch, options);
         if (response.ok) {
@@ -33,6 +32,4 @@ const Yelp = async() => {
     }
 }
 
-//export default Yelp;
-
-Yelp();
+export default Yelp;

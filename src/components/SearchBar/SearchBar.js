@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
 
-function SearchBar() {
+function SearchBar({ searchYelp }) {
     const [business, setBusiness] = useState("");
     const handleBusinessFieldChange = ({target}) => {
         setBusiness((prev) => target.value);
@@ -49,9 +49,6 @@ function SearchBar() {
         })
     }
 
-
-    
-
     /*commented out to simulate search without actual api interaction
     //request will fail due to CORS, figure out later
     const getBusinesses = async() => {
@@ -88,14 +85,15 @@ function SearchBar() {
     }
     */
 
-    //handleSubmit function to simulate search
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!business || !location) {
             alert('Please enter a value in each field!');
             return;
         }
-        alert(`Searching Yelp for ${business} in ${location} by ${sort}`);
+        //alert(`Searching Yelp for ${business} in ${location} by ${sort}`);
+        searchYelp(business, location, sort);
     }
 
     return (
