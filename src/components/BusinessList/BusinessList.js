@@ -7,7 +7,7 @@ function BusinessList({ businesses }) {
     return (
         <section className={styles.BusinessListContainer}>
             {businesses.map((business) => {
-                return <Business business={business} key={business.name} />;
+                return <Business business={business} key={business.id} />;
             })}
         </section>
     )
