@@ -4,7 +4,9 @@ import styles from './Business.module.css';
 function Business({ business }) {
     return (
         <section className={styles.BusinessContainer}>
-            <img src={business.image_url} alt={business.name}/>
+            <div className={styles.imageContainer} >
+                <img src={business.image_url} alt={business.name}/>
+            </div>
             <h2>{business.name}</h2>
             <div className={styles.BusinessDetailsContainer}>
                 <div className={styles.BusinessAddressContainer}>
