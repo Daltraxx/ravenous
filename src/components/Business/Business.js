@@ -2,6 +2,20 @@ import React from 'react';
 import styles from './Business.module.css';
 
 function Business({ business }) {
+
+    //check location addresses and don't include null values
+    const location = business.location;
+    let locationString = '';
+    switch (location) {
+        case location.address1 && location.address2:
+            locationString = `${location.address1} ${location.address2}`;
+            break;
+        case location.address1 && location.address2 && location.address3:
+            locationString = `${location.address1} ${location.address2} ${location.address3}`;
+        default:
+            locationString = location.address1;
+    }
+
     return (
         <section className={styles.BusinessContainer}>
             <div className={styles.imageContainer} >
@@ -10,7 +24,7 @@ function Business({ business }) {
             <h2>{business.name}</h2>
             <div className={styles.BusinessDetailsContainer}>
                 <div className={styles.BusinessAddressContainer}>
-                    <p>{`${business.location.address1} ${business.location.address2} ${business.location.address3}`}</p>
+                    <p>{locationString}</p>
                     <p>{business.location.city}</p>
                     <p>{business.location.state} {business.location.zip_code}</p>
                 </div>
