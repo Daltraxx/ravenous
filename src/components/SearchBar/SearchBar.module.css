@@ -54,6 +54,7 @@
   box-shadow: none;
 }
 
+
 /*SearchBar Text Fields*/
 .SearchBarFields {
     display: flex;
@@ -61,13 +62,20 @@
 }
 
 .SearchBarFields input {
-    width: 20rem;
+    width: 30%;
     padding: 0.5rem 1rem;
-    margin-right: 2.22rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
     margin-bottom: 2rem; 
     border-radius: 4px;
     font-size: 0.77rem;
     font-weight: 500;
+}
+
+@media only screen and (min-width: 1440px) {
+    .SearchBarFields input {
+        width: 20%;
+    }
 }
 
 /*SearchBar Submit button*/
