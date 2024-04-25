@@ -13,6 +13,8 @@ function SearchBar({ searchYelp }) {
     }
 
     const [sort, setSort] = useState('best_match');
+
+    //use state for not automatically highlighting a sort option upon the page being viewed
     const [isClicked, setIsClicked] = useState(false);
 
 
@@ -49,41 +51,7 @@ function SearchBar({ searchYelp }) {
         })
     }
 
-    /*commented out to simulate search without actual api interaction
-    //request will fail due to CORS, figure out later
-    const getBusinesses = async() => {
-        const apiKey = 'Bearer sYFtxn62jXMaORAzMZrYKb2R3_KxuzZO_AULHua7tAVs6Ic4qpylArVf3dt0VSDp6-n5tLRL0xdplrZtpUXzXU84waLANLRRpuYw7Fp8XYXxodyHHTb-FUvbofQZZnYx';
-        const url = 'https://api.yelp.com/v3/businesses/search?';
-        const termParam = `term=${parseFieldValue(business)}`;
-        const locationParam = `location=${parseFieldValue(location)}`;
-        const sortParam = 'sort_by=' + sort;
-        const resultLimit = 'limit=20';
-        const urlToFetch = url + locationParam + '&' + termParam + '&' + sortParam + '&' + resultLimit;
-        const options = {method: 'GET', headers: {accept: 'application/json', Authorization: apiKey}};
 
-        try {
-            const response = await fetch(urlToFetch, options);
-            if (response.ok) {
-                const jsonResponse = await response.json();
-                //console.log(jsonResponse);
-                const displayedBusinesses = jsonResponse.results;
-                return displayedBusinesses;
-            }
-        } catch(error) {
-            console.log(error);
-        }
-    }
-
-    const handleSubmit = async(event) => {
-        event.preventDefault();
-        if (!business || !location) {
-            alert('Please enter a value in each field!');
-            return;
-        }
-        const businessResults = await getBusinesses();
-        console.log(businessResults);
-    }
-    */
 
     
     const handleSubmit = (event) => {
@@ -92,7 +60,6 @@ function SearchBar({ searchYelp }) {
             alert('Please enter a value in each field!');
             return;
         }
-        //alert(`Searching Yelp for ${business} in ${location} by ${sort}`);
         searchYelp(business, location, sort);
     }
 
