@@ -54,6 +54,12 @@
   box-shadow: none;
 }
 
+@media only screen and (max-width: 400px) {
+    .SearchBarSortOptions {
+        margin-right: 6%;
+    }
+}
+
 
 /*SearchBar Text Fields*/
 .SearchBarFields {
@@ -75,6 +81,19 @@
 @media only screen and (min-width: 1440px) {
     .SearchBarFields input {
         width: 20%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .SearchBarFields {
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+
+    .SearchBarFields input {
+        width: 35%;
+        font-size: .7rem;
+        
     }
 }
 
@@ -109,3 +128,8 @@
     border: .1rem solid #fff;
   }
 
+@media only screen and (max-width: 400px) {
+    .SearchBarSubmit {
+        margin-right: 5%;
+    }
+}
