@@ -17,3 +17,10 @@ html {
     margin-bottom: 0;
     padding: .5rem;
 }
+
+@media only screen and (max-width: 400px) {
+    .App h1 {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+}
