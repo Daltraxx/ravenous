@@ -4,3 +4,9 @@
     flex-wrap: wrap;
     margin: 4.4rem 10%;
 }
+
+@media only screen and (max-width: 400px) {
+    .BusinessListContainer {
+        margin: 4.4rem 5% 4.4rem 0;
+    }
+}
