@@ -50,9 +50,6 @@ function SearchBar({ searchYelp }) {
             )
         })
     }
-
-
-
     
     const handleSubmit = (event) => {
         event.preventDefault();
