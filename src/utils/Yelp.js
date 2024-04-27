@@ -28,7 +28,7 @@ const Yelp = async(term, location, sort) => {
             return displayedBusinesses;
         }
     } catch(error) {
-        console.log(error);
+        return error;
     }
 }
 

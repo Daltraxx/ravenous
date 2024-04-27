@@ -11,8 +11,16 @@ function App() {
 
   const searchYelp = async(term, location, sort) => {
     const businesses = await Yelp(term, location, sort);
-    setBusinesses((prev) => businesses);
-    console.log(businesses);
+    if (Array.isArray(businesses)) {
+      if (businesses.length === 0) {
+        alert('No businesses found with these search parameters :(');
+      }
+      
+      setBusinesses((prev) => businesses);
+      console.log(businesses);
+    } else {
+      alert('No businesses found with these search parameters :(');
+    }
   }
   
 
