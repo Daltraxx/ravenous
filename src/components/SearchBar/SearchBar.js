@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
+import fullWindowStyles from './SearchBarFull.module.css';
 
 function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
     const [business, setBusiness] = useState("");
@@ -50,6 +51,7 @@ function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
             )
         })
     }
+
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -65,16 +67,16 @@ function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
     }
 
     return (
-        <div className={styles.SearchBar}>
-            <section className={styles.SearchBarSortOptions}>
+        <div className={displayResultsView? styles.SearchBar : fullWindowStyles.SearchBar}>
+            <section className={displayResultsView? styles.SearchBarSortOptions : fullWindowStyles.SearchBarSortOptions}>
                 {renderSearchBarSortOptions()}
             </section>
             <form onSubmit={handleSubmit}>
-                <div className={styles.SearchBarFields}>
+                <div className={displayResultsView? styles.SearchBarFields : fullWindowStyles.SearchBarFields}>
                     <input type='text' value={business} onChange={handleBusinessFieldChange} placeholder='Search Businesses' />
                     <input type='text' value={location} onChange={handleLocationFieldChange} placeholder='Where?' />
                 </div>
-                <div className={styles.SearchBarSubmit}>
+                <div className={displayResultsView? styles.SearchBarSubmit : fullWindowStyles.SearchBarSubmit}>
                     <input type='submit' value='Search Businesses' />
                 </div>
             </form>

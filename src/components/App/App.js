@@ -29,7 +29,7 @@ function App() {
             <SearchBar searchYelp={searchYelp} handleSearchSubmit={handleSearchSubmit} displayResultsView={displayResultsView}/>
           </nav>
         </header>
-        <main className={displayResultsView ? '' : styles.Hidden}>
+        <main className={displayResultsView ? '' : styles.Hide}>
           <BusinessList businesses={businesses} />
         </main>
         <Footer />

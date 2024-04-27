@@ -25,6 +25,7 @@ html {
     }
 }
 
-.Hidden {
+/*hides main element if displayResultsView is false*/
+.Hide {
     display: none;
 }
