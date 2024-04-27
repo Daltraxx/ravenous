@@ -1,19 +1,22 @@
-.SearchBar {
+.SearchBarBackgroundImage {
+    background-image: url('https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?cs=srgb&dl=pexels-lukas-616401.jpg&fm=jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 85vh;
+}
+
+.SearchBarContentContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    max-height: 16rem;
-    background-image: url('https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?cs=srgb&dl=pexels-lukas-616401.jpg&fm=jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    padding-top: 13.5%;
 }
 
 /*SearchBar Sort Options*/
 .SearchBarSortOptions {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 

@@ -67,19 +67,21 @@ function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
     }
 
     return (
-        <div className={displayResultsView? styles.SearchBar : fullWindowStyles.SearchBar}>
-            <section className={displayResultsView? styles.SearchBarSortOptions : fullWindowStyles.SearchBarSortOptions}>
-                {renderSearchBarSortOptions()}
-            </section>
-            <form onSubmit={handleSubmit}>
-                <div className={displayResultsView? styles.SearchBarFields : fullWindowStyles.SearchBarFields}>
-                    <input type='text' value={business} onChange={handleBusinessFieldChange} placeholder='Search Businesses' />
-                    <input type='text' value={location} onChange={handleLocationFieldChange} placeholder='Where?' />
-                </div>
-                <div className={displayResultsView? styles.SearchBarSubmit : fullWindowStyles.SearchBarSubmit}>
-                    <input type='submit' value='Search Businesses' />
-                </div>
-            </form>
+        <div className={displayResultsView? styles.SearchBar : fullWindowStyles.SearchBarBackgroundImage}>
+            <div className={displayResultsView? styles.SearchBar : fullWindowStyles.SearchBarContentContainer}>
+                <section className={displayResultsView? styles.SearchBarSortOptions : fullWindowStyles.SearchBarSortOptions}>
+                    {renderSearchBarSortOptions()}
+                </section>
+                <form onSubmit={handleSubmit}>
+                    <div className={displayResultsView? styles.SearchBarFields : fullWindowStyles.SearchBarFields}>
+                        <input type='text' value={business} onChange={handleBusinessFieldChange} placeholder='Search Businesses' />
+                        <input type='text' value={location} onChange={handleLocationFieldChange} placeholder='Where?' />
+                    </div>
+                    <div className={displayResultsView? styles.SearchBarSubmit : fullWindowStyles.SearchBarSubmit}>
+                        <input type='submit' value='Search Businesses' />
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }
