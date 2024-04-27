@@ -24,3 +24,7 @@ html {
         padding-left: 10%;
     }
 }
+
+.Hidden {
+    display: none;
+}

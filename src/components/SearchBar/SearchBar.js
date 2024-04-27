@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
 
-function SearchBar({ searchYelp, handleSearchSubmit }) {
+function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
     const [business, setBusiness] = useState("");
     const handleBusinessFieldChange = ({target}) => {
         setBusiness((prev) => target.value);
@@ -57,7 +57,10 @@ function SearchBar({ searchYelp, handleSearchSubmit }) {
             alert('Please enter a value in each field!');
             return;
         }
-        handleSearchSubmit();
+        if (!displayResultsView) {
+            handleSearchSubmit();
+        }
+    
         searchYelp(business, location, sort);
     }
 
