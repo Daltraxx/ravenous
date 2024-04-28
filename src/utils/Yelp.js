@@ -21,6 +21,9 @@ const Yelp = async(term, location, sort) => {
 
     try {
         const response = await fetch(urlToFetch, options);
+        if (response.status === 400) {
+            return 'These search terms result in a 400 error!';
+        }
         if (response.ok) {
             const jsonResponse = await response.json();
             const displayedBusinesses = jsonResponse.businesses;
@@ -28,7 +31,7 @@ const Yelp = async(term, location, sort) => {
             return displayedBusinesses;
         }
     } catch(error) {
-        return error;
+        console.log(error);
     }
 }
 

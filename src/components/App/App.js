@@ -19,7 +19,7 @@ function App() {
       setBusinesses((prev) => businesses);
       console.log(businesses);
     } else {
-      alert('No businesses found with these search parameters :(');
+      alert(businesses);
     }
   }
   
@@ -29,7 +29,7 @@ function App() {
   const handleSearchSubmit = () => {
     setDisplayResultsView((prev) => true);
   }
-  
+
     return (
       <div className={styles.App}>
         <header>
