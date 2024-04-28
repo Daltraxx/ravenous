@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './SearchBar.module.css';
+import partialWindowStyles from './SearchBar.module.css';
 import fullWindowStyles from './SearchBarFull.module.css';
 
 function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
@@ -25,11 +25,15 @@ function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
         'Most Reviewed': 'review_count'
     };
 
+    //Assign className value of active if button is the selected sort option
     const getSortOptionClassName = (sortOptionValue) => {
         if (sortOptionValue === sort && isClicked) {
-            return styles.active;
+            if (displayResultsView) {
+                return partialWindowStyles.active;
+            } else {
+                return fullWindowStyles.active;
+            }
         }
-
         return '';
     }
 
@@ -67,17 +71,17 @@ function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
     }
 
     return (
-        <div className={displayResultsView? styles.SearchBar : fullWindowStyles.SearchBarBackgroundImage}>
-            <div className={displayResultsView? styles.SearchBar : fullWindowStyles.SearchBarContentContainer}>
-                <section className={displayResultsView? styles.SearchBarSortOptions : fullWindowStyles.SearchBarSortOptions}>
+        <div className={displayResultsView? partialWindowStyles.SearchBarBackgroundImage : fullWindowStyles.SearchBarBackgroundImage}>
+            <div className={displayResultsView? partialWindowStyles.SearchBarContentContainer : fullWindowStyles.SearchBarContentContainer}>
+                <section className={displayResultsView? partialWindowStyles.SearchBarSortOptions : fullWindowStyles.SearchBarSortOptions}>
                     {renderSearchBarSortOptions()}
                 </section>
                 <form onSubmit={handleSubmit}>
-                    <div className={displayResultsView? styles.SearchBarFields : fullWindowStyles.SearchBarFields}>
+                    <div className={displayResultsView? partialWindowStyles.SearchBarFields : fullWindowStyles.SearchBarFields}>
                         <input type='text' value={business} onChange={handleBusinessFieldChange} placeholder='Search Businesses' />
                         <input type='text' value={location} onChange={handleLocationFieldChange} placeholder='Where?' />
                     </div>
-                    <div className={displayResultsView? styles.SearchBarSubmit : fullWindowStyles.SearchBarSubmit}>
+                    <div className={displayResultsView? partialWindowStyles.SearchBarSubmit : fullWindowStyles.SearchBarSubmit}>
                         <input type='submit' value='Search Businesses' />
                     </div>
                 </form>

@@ -15,7 +15,7 @@ function App() {
       if (businesses.length === 0) {
         alert('No businesses found with these search parameters :(');
       }
-      
+
       setBusinesses((prev) => businesses);
       console.log(businesses);
     } else {
@@ -29,6 +29,7 @@ function App() {
   const handleSearchSubmit = () => {
     setDisplayResultsView((prev) => true);
   }
+  
     return (
       <div className={styles.App}>
         <header>
