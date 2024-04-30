@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import partialWindowStyles from './SearchBar.module.css';
 import fullWindowStyles from './SearchBarFull.module.css';
 
-function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
+function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView, businesses }) {
     const [business, setBusiness] = useState("");
     const handleBusinessFieldChange = ({target}) => {
         setBusiness((prev) => target.value);
@@ -37,9 +37,16 @@ function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
         return '';
     }
 
+    //useState for saving submitted query in case it is re-queried by changing the sort option (and user has changed values of search fields)
+    const [previousQuery, setPreviousQuery] = useState({});
+
     const handleSortOptionChange = (sortOptionValue) => {
         setIsClicked((prev) => true);
         setSort((prev) => sortOptionValue);
+        //requeries Yelp API based off previous params submission if sort option is changed
+        if (businesses) {
+            searchYelp(previousQuery.business, previousQuery.location, sortOptionValue);
+        }
     }
 
     const renderSearchBarSortOptions = () => {
@@ -66,6 +73,12 @@ function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView }) {
         if (!displayResultsView) {
             handleSearchSubmit();
         }
+        let savedQuery = {'business' : business, 'location' : location};
+        setPreviousQuery((prev) => ({
+            ...prev,
+            ...savedQuery
+        }));
+    
     
         searchYelp(business, location, sort);
     }

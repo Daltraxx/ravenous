@@ -17,6 +17,7 @@ const Yelp = async(term, location, sort) => {
     
     const resultLimit = 'limit=20';
     const urlToFetch = url + locationParam + '&' + termParam + '&' + sortParam + '&' + resultLimit;
+    console.log(urlToFetch);
     const options = {method: 'GET', headers: {accept: 'application/json', Authorization: apiKey}};
 
     try {

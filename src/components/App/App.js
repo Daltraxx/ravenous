@@ -17,7 +17,7 @@ function App() {
       }
 
       setBusinesses((prev) => businesses);
-      console.log(businesses);
+      //console.log(businesses);
     } else {
       alert(businesses);
     }
@@ -35,7 +35,7 @@ function App() {
         <header>
           <h1>Ravenous</h1>
           <nav>
-            <SearchBar searchYelp={searchYelp} handleSearchSubmit={handleSearchSubmit} displayResultsView={displayResultsView}/>
+            <SearchBar searchYelp={searchYelp} handleSearchSubmit={handleSearchSubmit} displayResultsView={displayResultsView} businesses={businesses.length > 0 ? true : false}/>
           </nav>
         </header>
         <main className={displayResultsView ? '' : styles.Hide}>
