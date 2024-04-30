@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer';
 import Yelp from '../../utils/Yelp';
 
 function App() {
+  //useState for storing array of businesses retrieved from Yelp API
   const [businesses, setBusinesses] = useState([]);
 
   const searchYelp = async(term, location, sort) => {
@@ -17,15 +18,15 @@ function App() {
       }
 
       setBusinesses((prev) => businesses);
-      //console.log(businesses);
+
     } else {
       alert(businesses);
     }
   }
   
-
+  //useState for determining whether results view is displayed or not
   const [displayResultsView, setDisplayResultsView] = useState(false);
-  
+  //toggles results view if a valid search is submitted
   const handleSearchSubmit = () => {
     setDisplayResultsView((prev) => true);
   }

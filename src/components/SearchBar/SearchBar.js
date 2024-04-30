@@ -73,6 +73,8 @@ function SearchBar({ searchYelp, handleSearchSubmit, displayResultsView, busines
         if (!displayResultsView) {
             handleSearchSubmit();
         }
+
+        //save query business and location params in case user changes sort option for re-query
         let savedQuery = {'business' : business, 'location' : location};
         setPreviousQuery((prev) => ({
             ...prev,
