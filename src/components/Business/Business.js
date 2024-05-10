@@ -12,6 +12,7 @@ function Business({ business }) {
             break;
         case location.address1 && location.address2 && location.address3:
             locationString = `${location.address1} ${location.address2} ${location.address3}`;
+            break;
         default:
             locationString = location.address1;
     }
