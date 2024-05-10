@@ -17,6 +17,10 @@ function Business({ business }) {
             locationString = location.address1;
     }
 
+    const getGoogleMapsLink = () => {
+        return `http://maps.google.com/?q=${business.name} ${locationString} ${business.location.city} ${business.location.state} ${business.location.zip_code}`;
+    }
+
     return (
         <section className={styles.BusinessContainer}>
             <div className={styles.imageContainer} >
@@ -24,11 +28,11 @@ function Business({ business }) {
             </div>
             <h2>{business.name}</h2>
             <div className={styles.BusinessDetailsContainer}>
-                <div className={styles.BusinessAddressContainer}>
+                <a className={styles.BusinessAddressContainer} href={getGoogleMapsLink()} target="_blank">
                     <p>{locationString}</p>
                     <p>{business.location.city}</p>
                     <p>{business.location.state} {business.location.zip_code}</p>
-                </div>
+                </a>
                 <div className={styles.BusinessRatingContainer}>
                     <h3>{business.categories[0].title}</h3>
                     <p>{business.rating} stars</p>
