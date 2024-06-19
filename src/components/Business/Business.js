@@ -17,6 +17,7 @@ function Business({ business }) {
             locationString = location.address1;
     }
 
+    //generate a link to google maps using address information
     const getGoogleMapsLink = () => {
         return `http://maps.google.com/?q=${business.name} ${locationString} ${business.location.city} ${business.location.state} ${business.location.zip_code}`;
     }
