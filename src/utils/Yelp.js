@@ -1,4 +1,4 @@
-const apiKey = 'Bearer sYFtxn62jXMaORAzMZrYKb2R3_KxuzZO_AULHua7tAVs6Ic4qpylArVf3dt0VSDp6-n5tLRL0xdplrZtpUXzXU84waLANLRRpuYw7Fp8XYXxodyHHTb-FUvbofQZZnYx';
+const apiKey = 'Bearer ' + '';
 
 const Yelp = async(term, location, sort) => {
     //url with api use prepended to get past CORS restrictions
