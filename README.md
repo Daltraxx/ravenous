@@ -14,6 +14,7 @@ Upon submitting the search, a display page is rendered which shows the top 50 re
 
 - Node Project Manager version 5.2 or higher
 - A Yelp API key. The key should be pasted into the empty string after `'Bearer'` in the `apiKey` variable at the top of `/src/utils/Yelp.js`.
+- Use of a service such as https://cors-anywhere.herokuapp.com/corsdemo to get past CORS restrictions when querying Yelp API through the browser.
 
 ### Executing Program
 
