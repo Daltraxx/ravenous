@@ -4,7 +4,7 @@ This React webapp takes user input and queries the Yelp API to display a list of
 
 ## Description
 
-From the landing page the use4 is able to enter search terms into business name and location field. They may also select a sort parameter - "Best Match", "Highest Rated", or "Most Reviewed". "Best Match" is the default sort if none is selected.
+From the landing page the user is able to enter search terms into business name and location field. They may also select a sort parameter - "Best Match", "Highest Rated", or "Most Reviewed". "Best Match" is the default sort if none is selected.
 
 Upon submitting the search, a display page is rendered which shows the top 50 results along with relevant information, though this maximum can be altered in the Yelp API query. Clicking one of the businesses takes the user to a separate tab with the business's Google Maps location. Selecting one of the sort options will automatically re-query Yelp with the previous search terms and display the returned businesses. 
 
